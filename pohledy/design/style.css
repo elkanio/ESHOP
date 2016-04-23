@@ -1,0 +1,127 @@
+header, article, footer {
+	width:800px;
+	text-align: center;
+	margin: auto;
+
+}
+header {
+	height: 70px;
+	border-bottom: 2px solid black;
+	margin-bottom: 10px;
+}
+
+a{
+	font-weight: bold;
+	color: black;
+	text-decoration:none;
+}
+a:hover {
+	color: #FF0000;
+}
+
+p{
+	text-align: left;
+}
+
+
+/*Logo*/
+#logo {
+	float:left;
+	font: 60px Audiowide, verdana, sans-serif;
+	color: white;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+#logo span{
+	font: 50px  Audiowide, verdana, sans-serif;
+	color: #333333;
+    text-shadow: none;
+}
+
+/*Navigace s vyjizdecim menu*/
+nav ul{
+	list-style-type:none;
+	padding:0;
+	padding-top: 32px;
+	margin:0;
+	float:right;
+
+}
+nav ul li  {
+	float:left;
+}
+nav ul li a {
+	padding: 10px 30px;
+	display:block;
+	font: 18px arial, verdana, sans-serif;
+	text-transform: uppercase;
+}
+nav ul li ul{
+	position:absolute;
+	left:-9999px;
+	top:-9999px;
+	list-style-type:none;
+}
+nav ul li:hover {
+	position:relative;
+
+}
+nav ul li:hover ul {
+	left:0px;
+	top:30px;
+	padding:0px;
+}
+nav ul li:hover ul li a {
+	font: 16px arial, verdana, sans-serif;
+	padding:5px;
+	display:block;
+	width:150px;
+	text-indent:15px;
+	background-color: white;
+	color:black;
+}
+nav ul li:hover ul li a:hover {
+	background:#CCCCCC;
+}
+
+/*Tabulky v nabídce*/
+#nabidka{
+	width:100%;
+	border-collapse: collapse;
+}
+
+#nabidka img{
+	width:80%;
+}
+.produkt{
+	width:100%;
+	border-radius: 7px;
+	border:2px solid #CCCCCC;
+}
+.produkt img{
+	width: 250px;
+	height: 250px;
+}
+
+/*Strana Produkt*/
+#Koupit, #Kosik {
+	margin: auto;
+}
+#Koupit,#Kosik td {
+	padding: 10px;
+}
+/*Strana Kosik*/
+#Kosik{
+	border: 2px solid black;
+	border-radius: 5px;
+
+}
+#Kosik a{
+	font-weight: normal;
+}
+#Objednani {
+	text-align: left;
+}
+
+footer{
+	margin-top: 20px;
+}

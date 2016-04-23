@@ -1,0 +1,166 @@
+/* CSS Document */
+
+
+* {
+  margin:   0;
+  padding:  0;
+
+
+}
+
+a  {
+
+  text-decoration: none;
+  list-style-type: none;
+
+
+
+}
+
+body {
+      background-color: black;
+      background-image: url(background.png);
+      background-repeat: repeat-x;
+      background-position: top center;
+     }
+
+#content
+{
+	width: 800px;
+	margin: 40px auto 0px auto;
+	padding-bottom: 55px;
+}
+
+
+
+#nazev_menu  {
+      font-family: Tahoma, Geneva, Verdana, sans-serif;
+      text-shadow: 5px 5px 5px #FF0000;
+      text-align: center;
+      margin-bottom: 10px;
+     }
+
+
+#prihlasovani1 {
+      width: 100%;
+      height: x;
+      background-image: url(prihlasovani.png);
+
+      -ms-border-bottom-left-radius: 5px;
+       -webkit-border-bottom-left-radius: 5px;
+       -moz-border-radius-bottomleft: 5px;
+       border-bottom-left-radius: 5px;
+       border-bottom-right-radius: 5px;
+     }
+td.prihlasovani2  {
+      padding-bottom: 3px;
+      padding-top: 4px;
+      margin-right: 10px;
+     }
+
+#tlacitko{
+
+      margin: 5, 5, 5, 5;
+               }
+
+
+
+
+
+
+#hlavni_stranka{
+       background-color: #00A200;
+       margin-left: 4.5cm;
+       margin-top: 1cm;
+       margin-bottom: 2cm;
+       position: relative;
+       width: 1024px;
+       height: auto;
+
+       -ms-border-bottom-right-radius: 30px;
+       -ms-border-bottom-left-radius: 30px;
+       -ms-border-top-right-radius: 3px;
+       -ms-border-top-left-radius: 3px;
+       -webkit-border-bottom-right-radius: 30px;
+       -webkit-border-top-right-radius: 3px;
+       -webkit-border-bottom-left-radius: 30px;
+       -webkit-border-top-left-radius: 3px;
+       -moz-border-radius-bottomright: 30px;
+       -moz-border-radius-topright: 3px;
+       -moz-border-radius-bottomleft: 30px;
+       -moz-border-radius-topleft: 30px;
+       border-bottom-left-radius: 30px;
+       border-top-right-radius: 3px;
+       border-bottom-right-radius: 30px;
+       border-top-left-radius: 3px;
+       box-shadow: 10px 10px 20px #009900;
+
+      }
+
+#menu  {
+
+position: absolute;
+right: 0.4cm ;
+top: 60px;
+width: 220px;
+height: x;
+background-color: #005800;
+background: -webkit-gradient(linear, 0 0, 0 bottom, from(#005800), to(#00a800));
+background: -webkit-linear-gradient(#005800, #00a800);
+background: -moz-linear-gradient(#005800, #00a800);
+background: -ms-linear-gradient(#005800, #00a800);
+background: -o-linear-gradient(#005800, #00a800);
+background: linear-gradient(#005800, #00a800);
+
+      -ms-border-bottom-left-radius: 2px;
+      -webkit-border-bottom-left-radius: 2px;
+      -moz-border-radius-bottomleft: 2px;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      box-shadow: 3px 3px 3px #005800;
+
+
+      }
+
+div.div_menu1  {
+      background-image: url(divmenu.png);
+      width: 200px;
+      height: 180px;
+      margin-bottom: 5px;
+      margin-left: 10px;
+
+      -ms-border-bottom-left-radius: 2px;
+      -webkit-border-bottom-left-radius: 2px;
+      -moz-border-radius-bottomleft: 2px;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+
+}
+
+div.div_menu2  {
+      background-image: url(divmenu.png);
+      width: 200px;
+      height: 180px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+
+      -ms-border-bottom-left-radius: 2px;
+      -webkit-border-bottom-left-radius: 2px;
+      -moz-border-radius-bottomleft: 2px;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+
+}
+
+
+
+
+
+
+
