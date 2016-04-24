@@ -49,8 +49,8 @@ class Produkt
 				$cena = $_POST['cena'];
 
 				// aktualizovat hodnotu v databazi
-				$query = "UPDATE produkty SET nazev='.$nazev.', popis='.$popis.', kategorie='.$kategorie.',
-						cena='.$cena.' WHERE id='.$idProduktu.'";
+				$query = "UPDATE produkty SET nazev='$nazev', popis='$popis', kategorie='$kategorie',
+						cena='$cena' WHERE id='$idProduktu'";
 
 				// spustit dotaz
 				mysqli_query($pripojeni, $query);
