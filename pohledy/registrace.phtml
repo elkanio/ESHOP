@@ -3,14 +3,12 @@
 	<?= $this->error ?>
 </p>
 
-<?php
-// funkce pro vykresleni prihlasovaciho formulare
-function formular($jmeno = "") {
-	?>
-<form id="formular" action="registrace.php" method="post">
+
+<form id="formular" method="post">
    <table>
   	<tr><td><label for="uzivatelLogin">Uživatelské jméno:</label></td>
-  	<td><input type="text" name="uzivatelLogin" id="uzivatelLogin" value="<?php echo $jmeno; ?>"></td>
+  	<td><input type="text" name="uzivatelLogin" id="uzivatelLogin"
+  	value="<?php ?>"></td>
   	</tr>
     <tr>
   	<td><label for="uzivatelHeslo1">Heslo:</label></td>
@@ -28,6 +26,3 @@ function formular($jmeno = "") {
   </table>
 </form>
 
-<?php
-}
-?>

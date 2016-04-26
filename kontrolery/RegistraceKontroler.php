@@ -17,27 +17,10 @@ public function __construct()
 		$this->heslo = post('uzivatelHeslo1');
 		$this->hesloZnova = post('"uzivatelHeslo2"');
 
-		if($_POST)
+		if($_POST['registrace'])
 		{
-			#Zkontroluje, jestli existuji vsechny udaje
-			if($this->nick&&$this->heslo)
-				{
-					if($registrace->registruj($this->nick,$this->heslo,$this->hesloZnova))
-					{
-						#ulozi zpravu do SESSION, ktera se zobrazi v index.php a kde se po jejim vypsani SESSION znici
-						$_SESSION['zprava']="Úspěšně registrováno.";
-					}
-					else
-					{
-						$this->error="Nepovedlo se připojit k databazi. Zkuste to za chvili.";
-					}
-				}
-			else
-				$this->error = "Nemáte vyplněný formlulář";
-
-		}else {
-				formular();
-			}
+			$registrace->registruj($this->nick,$this->heslo,$this->hesloZnova);
+		}
 	}
 
 }

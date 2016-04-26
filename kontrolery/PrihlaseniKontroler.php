@@ -37,8 +37,6 @@ public function __construct()
 			else
 				$this->error = "Nemáte vyplněný formlulář";
 
-		}else {
-			prihlaseniFormular();
 		}
 	}
 	#Funkce, která upraví produkty do formy vhodné pro db - vytvoří řetězec POČET.PRODUKT;POČET.PRODUKT;...

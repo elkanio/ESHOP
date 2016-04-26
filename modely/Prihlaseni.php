@@ -25,14 +25,14 @@ class Prihlaseni{
 				else {
 					// vypsat spatne zadane heslo
 					echo '<b>Zadané heslo není správné.</b>';
-					prihlaseniFormular();
+					//prihlaseniFormular();
 				}
 			}
 			// jinak
 			else {
 				// vypsat neexistujici uzivatel
 				echo '<b>Uživatel neexistuje</b>';
-				prihlaseniFormular();
+				//prihlaseniFormular();
 			}
 
 		}

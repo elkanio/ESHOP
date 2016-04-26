@@ -52,13 +52,14 @@ class Produkt
 				$query = "UPDATE produkty SET nazev='$nazev', popis='$popis', kategorie='$kategorie',
 						cena='$cena' WHERE id='$idProduktu'";
 
+				$pripojeni->error;
+
 				// spustit dotaz
-				mysqli_query($pripojeni, $query);
 				if ($pripojeni->query($query) === TRUE) {
 					echo "Produkt úspěšně upraven";
 					header("location: /ES/index.php");
 				} else {
-					echo "Chyba databaze: " . $pripojeni->error;
+				echo "Chyba databaze: " . $pripojeni->error;
 				}
 
 			mysqli_close($pripojeni);

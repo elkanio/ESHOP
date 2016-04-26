@@ -1,8 +1,6 @@
 <?php
 class Registrace{
 		public function registruj($jmeno,$heslo,$hesloZnovu){
-			// kdyz byla odeslana registrace
-			if (isset($_POST['registrace'])) {
 				// pomocna promenna ktera signalizuje, zda jsou udaje z
 				// formulare v poradku - splnuji pravidla
 				$uspech = true;
@@ -30,14 +28,10 @@ class Registrace{
 				// kdyz byla kontrola v poradku -> provest registraci
 				if($uspech) {
 					$login = $jmeno;
-					$hashHesla = $hesloZnovu;
+					$hashHesla = sha1($hesloZnovu);
 
-					// vytvorit zaznam uzivatele v databazi
-					// ...doplnit pozdeji
-					include_once 'mysql.php';
 
-					// ziskat pripojeni k databazi
-					$pripojeni = mysqlPripojeni();
+					$pripojeni = mysqli_connect('localhost', 'root', '', 'eshop');
 
 					// zjistit zda existuje uzivatel se zadanym loginem
 					$dotaz = "SELECT * FROM uzivateldb WHERE login='$login';";
@@ -66,15 +60,11 @@ class Registrace{
 						echo '<p style="color: red; font-weight: bold;">'.
 								'Uživatel <b>'.$login.'</b> už existuje, zadejte'.
 								' jiné přihlašovací jméno.</p>';
-						formular();
 					}
 
 				}
 				// jinak vypsat formular s prednastavenym jmenem
-				else {
-					formular($_POST['uzivatelLogin']);
-				}
-			}
+
 
 
 	}
