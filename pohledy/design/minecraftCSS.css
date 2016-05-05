@@ -64,7 +64,11 @@ td.prihlasovani2  {
                }
 
 
+.objednavky tr td{
 
+	border: solid 2px gray;
+
+}
 
 
 

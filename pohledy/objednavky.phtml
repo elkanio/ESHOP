@@ -1,0 +1,33 @@
+<table class="objednavky">
+<tr><td>Jméno</td><td>Prijmeni</td><td>Doprava</td><td>Platba</td><td>Produkty x krat</td><td>cena</td><td>mesto</td><td colspan=2></td></tr>
+<?php
+
+$pocetProduktu = 0;
+while(isset($this->data[$pocetProduktu])){
+
+	for( $j = 0;$j<3;$j++)
+	{
+	if(isset($this->data[$pocetProduktu])){
+	echo <<<EOT
+
+		<tr>
+			<td>{$this->data[$pocetProduktu]['jmeno']}</td><td> {$this->data[$pocetProduktu]['prijmeni']}</td>
+			<td> {$this->data[$pocetProduktu]['platba']}</td><td>{$this->data[$pocetProduktu]['doprava']}</td>
+			<td>{$this->data[$pocetProduktu]['produkty']}</td><td>{$this->data[$pocetProduktu]['cena']}</td>
+			<td>{$this->data[$pocetProduktu]['mesto']}</td>
+
+			<td><a href="index.php?strana=Objednavky&id={$this->data[$pocetProduktu]['id']}&updateok=true">Vyřešit</a></td>
+
+			<td><a href="index.php?strana=Objednavky&id={$this->data[$pocetProduktu]['id']}&updateko=true">Odřešit</a></td>
+
+		</tr>
+
+EOT;
+	$pocetProduktu++;
+	}
+	}
+}
+?>
+</table>
+
+
