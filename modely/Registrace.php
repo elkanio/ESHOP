@@ -64,9 +64,6 @@ class Registrace{
 
 				}
 				// jinak vypsat formular s prednastavenym jmenem
-
-
-
 	}
 }
 ?>

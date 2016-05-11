@@ -39,16 +39,6 @@ public function __construct()
 
 		}
 	}
-	#Funkce, která upraví produkty do formy vhodné pro db - vytvoří řetězec POČET.PRODUKT;POČET.PRODUKT;...
-	private function UpravProdukty()
-	{
-		$stringProdukty = "";
-		for($i = 0; $i<count($this->data['produkty']);$i++){
-			$stringProdukty .= $this->data['produkty'][$i]['pocet'].".".$this->data['produkty'][$i]['id'].";";
-
-		}
-		return $stringProdukty;
-	}
 
 }
 #jen pro zjednoduseni nacteni z POST
