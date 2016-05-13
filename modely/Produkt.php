@@ -4,7 +4,7 @@ class Produkt
 	#kontroluje jestli daný Produkt existuje
 	public static function Existuje($id)
 	{
-		if(db::VratRadek("SELECT * FROM produkty WHERE id = ?", array($id)))
+		if(db::VratRadek("SELECT * FROM produkty WHERE id = ? LIMIT 1", array($id)))
 			return true;
 		else
 			return false;

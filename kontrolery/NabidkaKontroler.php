@@ -18,9 +18,9 @@ class NabidkaKontroler extends Kontroler {
 			$nabidkaUlozit->akcePridatProdukt();
 		}
 
+		$kos = new Kosik();
 		if(ctype_digit($idProduktu))
 		{
-			$kos = new Kosik();
 			$kos->Pridej($idProduktu);
 			$this->Presmeruj("index.php");
 		}
@@ -32,6 +32,7 @@ class NabidkaKontroler extends Kontroler {
 		#Vytvoreni nabidky a ulozeni dat
 		$nabidka = new Nabidka();
 		$this->data = $nabidka->VypisProdukty($kategorie,$razeni);
+		$this->cena = $kos->CelkovaCena();
 	}
 
 }
