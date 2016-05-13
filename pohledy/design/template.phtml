@@ -16,12 +16,42 @@
   <div id="prihlasovani1">
 
   <table>
+<?php
+  include "modely/uzivatel.php";
 
-    <tr>
-      <td class="prihlasovani2"><a href="index.php?strana=Prihlaseni">Přihlášení- </a></td>
-      <td class="prihlasovani2"><a href="index.php?strana=Registrace"> -Registrace</a></td>
-    <tr>
+// kdyz ma uzivatel ID 0 -> neregistrovany uzivatel
+if($_SESSION['id'] == 0) {
+  echo '<tr>'.
+       '<td class="prihlasovani2">'.
+       '<a href="index.php?strana=Prihlaseni">|Přihlásit se|</a>'.
+       '<a href="index.php?strana=Registrace">|Zaregistrovat se|</a>'.
+       '</td>'.
+  	   '</tr>';
+}
+// jinak ID jine nez 0 -> prihlaseny uzivatel
+else {
 
+
+echo  '<form method="get">'.
+      '<tr>'.
+      '<td class="prihlasovani2">'.
+      '<a href="index.php?strana=Registrace">|Zaregistrovat se| </a>'.
+      'Ahoj: '.$_SESSION['jm'].'<input value="odhlásit" type="submit" name="odhlasit">'.
+      '</td>'.
+      '</tr>'.
+      '</form>';
+
+
+	if(isset($_GET['odhlasit']))
+	{
+		session_destroy();
+		header("location: ES/index.php");
+		exit;
+	}
+
+}
+
+?>
   </table>
 
   </div>
@@ -46,7 +76,7 @@
 					</ul>
 		  </li>
 
-		     <li class='has-sub '><a href="index.php?strana=Kosik"><span>Nákupní košík</span></a></li>
+		     <li class='has-sub '><a href="index.php?strana=Kosik"><span>Nákupní košík (<?php if(isset($this->cena)) echo $this->cena; else echo "0"?>)</span></a></li>
 		     <li class='has-sub '><a href="index.php?strana=Objednavky"><span>Přehled objednávek</span></a></li>
 
 		</ul>

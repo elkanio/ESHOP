@@ -3,7 +3,7 @@ class Prihlaseni{
 	public function prihlas($jmeno,$heslo){
 
 
-		$dotaz = "SELECT * FROM uzivateldb WHERE login='$jmeno'";
+		$dotaz = "SELECT * FROM uzivateldb WHERE login='$jmeno' LIMIT 1";
 		$pripojeni = mysqli_connect('localhost', 'root', '', 'eshop');
 		$data = mysqli_query($pripojeni, $dotaz);
 
@@ -14,9 +14,10 @@ class Prihlaseni{
 				if($uzivatel['hashHesla'] == sha1($heslo)) {
 					// prihlasit uzivatele -> vytvorit SESSION id podle ID v databazi
 					include_once 'uzivatel.php';
+					echo "neco";
 					$_SESSION['id'] = $uzivatel['id'];
 					// ulozit udaje uzivatele do SESSION
-					$_SESSION['uzivatel'] = $uzivatel;
+					$_SESSION['jm'] = $uzivatel['login'];
 
 		      header("location: /ES/index.php");
 				}
