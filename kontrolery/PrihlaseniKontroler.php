@@ -14,8 +14,8 @@ public function __construct()
 		$prihlaseni = new Prihlaseni();
 
 		#Nacte soubory z POST, pred podminkou, protoze se tyhle veci davaji do sablony
-		$this->nick = post('uzivatelJmeno');
-		$this->heslo = post('uzivatelHeslo');
+		$this->nick = htmlspecialchars(trim(post('uzivatelJmeno')));
+		$this->heslo = htmlspecialchars(trim(post('uzivatelHeslo')));
 
 		if($_POST)
 		{

@@ -44,25 +44,25 @@ EOT;
 ?>
 </table>
 
-<!-- <form action="modely/Nabidka.php" method="post"> -->
-<form method="post">
-	    <table>
-	    	<tr><td><label for="nazev">Název:</label></td>
-			<td><input type="text" name="nazev"></td></tr>
+<?php if($_SESSION['idUzivatel'] != 0) {
 
+echo '<form method="post">'.
+	    '<table>'.
+	    	'<tr>'.
+			'<td>'.'<label for="nazev">Název:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="nazev">'.'</td>'.'</tr>'.
 
-			<tr><td><label for="popis">Popis:</label></td>
-			<td><input type="text" name="popis"></td></tr>
+			'<td>'.'<label for="popis">Popis:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="popis">'.'</td>'.'</tr>'.
 
-			<tr><td><label for="kategorie">Kategorie:</label></td>
-			<td><input type="text" name="kategorie"></td></tr>
+			'<td>'.'<label for="kategorie">Kategorie:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="kategorie">'.'</td>'.'</tr>'.
 
-			<tr><td><label for="cena">Cena:</label></td>
-			<td><input type="text" name="cena"></td></tr>
+			'<td>'.'<label for="cena">Cena:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="cena">'.'</td>'.'</tr>'.
 
-
-			<tr><td><input type="submit" value="Přidat produkt" name="pridatProdukt"></td></tr>
-		  </table>
-</form>
-
+			'<tr>'.'<td>'.'<input type="submit" value="Přidat produkt" name="pridatProdukt">'.'</td>'.'</tr>'.
+		  '</table>'.
+'</form>';
+ } ?>
 

@@ -15,12 +15,17 @@ while(isset($this->data[$pocetProduktu])){
 			<td> {$this->data[$pocetProduktu]['platba']}</td><td>{$this->data[$pocetProduktu]['doprava']}</td>
 			<td>{$this->data[$pocetProduktu]['produkty']}</td><td>{$this->data[$pocetProduktu]['cena']}</td>
 			<td>{$this->data[$pocetProduktu]['mesto']}</td>
-			<td><a href="index.php?strana=Objednavky&id={$this->data[$pocetProduktu]['id']}&updateok=true">Vyřešit</a></td>
-			<td><a href="index.php?strana=Objednavky&id={$this->data[$pocetProduktu]['id']}&updateko=true">Odřešit</a></td>
-
-		</tr>
-
 EOT;
+
+	if ($this->data[$pocetProduktu]['vyrizeno'] == 0) {
+		echo '<td>'.'<a href="index.php?strana=Objednavky&id='.$this->data[$pocetProduktu]['id'].'&updateok=true">Dokončit</a>'.'</td>'.
+				'</tr>';
+	}else{
+
+		echo '<td>'.'<a href="index.php?strana=Objednavky&id='.$this->data[$pocetProduktu]['id'].'&updateko=true">Zpracováno!</a>'.'</td>'.
+		'</tr>';
+	}
+
 	$pocetProduktu++;
 	}
 	}

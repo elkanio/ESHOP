@@ -23,7 +23,9 @@ class NabidkaKontroler extends Kontroler {
 		{
 			$kos->Pridej($idProduktu);
 			$this->Presmeruj("index.php");
+			$_SESSION['zprava']="Produkt úspěšně přidán";
 		}
+
 		#Jestli je nastavená kategorie, zobrazí se pouze ta
 		$kategorie = (isset($_GET['kat'])) ? $_GET['kat'] : "";
 		#Jestli je nastavené řazení, řadí se podle něj, jinak podle ceny

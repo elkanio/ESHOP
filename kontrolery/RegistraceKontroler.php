@@ -13,9 +13,9 @@ public function __construct()
 		$registrace = new Registrace();
 
 		#Nacte soubory z POST, pred podminkou, protoze se tyhle veci davaji do sablony
-		$this->nick = post('uzivatelLogin');
-		$this->heslo = post('uzivatelHeslo1');
-		$this->hesloZnova = post('uzivatelHeslo2');
+		$this->nick = htmlspecialchars(trim(post('uzivatelLogin')));
+		$this->heslo = htmlspecialchars(trim(post('uzivatelHeslo1')));
+		$this->hesloZnova = htmlspecialchars(trim(post('uzivatelHeslo2')));
 
 		if(post('registrace'))
 		{

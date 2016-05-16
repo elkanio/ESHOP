@@ -18,12 +18,19 @@ class Nabidka{
 			"</p>";
 		}
 
+		$nazev = htmlspecialchars(trim($_POST['nazev']));
+		$popis = htmlspecialchars(trim($_POST['popis']));
+		$kategorie = htmlspecialchars(trim($_POST['kategorie']));
+		$cena = htmlspecialchars(trim($_POST['cena']));
 		// pripravit dotaz
-		$dotazSQL = "INSERT INTO produkty (nazev, popis, kategorie, cena)
+		/*$dotazSQL = "INSERT INTO produkty (nazev, popis, kategorie, cena)
 							VALUES ('".$_POST['nazev']."',
 								    '".$_POST['popis']."',
 								    '".$_POST['kategorie']."',
-								    '".$_POST['cena']."')";
+								    '".$_POST['cena']."')";*/
+
+		$dotazSQL = "INSERT INTO produkty (nazev, popis, kategorie, cena)
+		 VALUES ('$nazev','$popis','$kategorie','$cena')";
 
 
 

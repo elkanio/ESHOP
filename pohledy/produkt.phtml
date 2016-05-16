@@ -16,25 +16,35 @@
 <br>
 
 
-<a href="index.php?strana=Produkt&id=<?=$this->data['id']?>&delete=true">Odstranit</a>
+
 <a href="index.php">Zpět na nabídku</a>
 
-<form method="post">
-	    <table>
-	    	<tr><td><label for="nazev">Název:</label></td>
-			<td><input type="text" name="nazev" value="<?= htmlspecialchars($this->data['nazev']) ?>"></td></tr>
+
+<?php if($_SESSION['idUzivatel'] != 0) {
+	$pom = $this->data['id'];
+
+	echo '<a href="index.php?strana=Produkt&id='.$pom.'&delete=true">Odstranit</a>';
+
+echo '<form method="post">'.
+	    '<table>'.
+	    	'<tr>'.
+			'<td>'.'<label for="nazev">Název:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="nazev" value="'.htmlspecialchars($this->data['nazev']).'">'.'</td>'.'</tr>'.
+
+			'<td>'.'<label for="popis">Popis:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="popis" value="'.htmlspecialchars($this->data['popis']).'">'.'</td>'.'</tr>'.
+
+			'<td>'.'<label for="kategorie">Kategorie:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="kategorie" value="'.htmlspecialchars($this->data['kategorie']).'">'.'</td>'.'</tr>'.
+
+			'<td>'.'<label for="cena">Cena:</label>'.'</td>'.
+			'<td>'.'<input type="text" name="cena" value="'.htmlspecialchars($this->data['cena']).'">'.'</td>'.'</tr>'.
+
+			'<tr>'.'<td>'.'<input type="submit" value="Upravit produkt" name="upravitProdukt">'.'</td>'.'</tr>'.
+		  '</table>'.
+'</form>';
+ } ?>
 
 
-			<tr><td><label for="popis">Popis:</label></td>
-			<td><input type="text" name="popis" value="<?= htmlspecialchars($this->data['popis']) ?>"></td></tr>
-
-			<tr><td><label for="kategorie">Kategorie:</label></td>
-			<td><input type="text" name="kategorie" value="<?= htmlspecialchars($this->data['kategorie']) ?>"></td></tr>
-
-			<tr><td><label for="cena">Cena:</label></td>
-			<td><input type="text" name="cena" value="<?= htmlspecialchars($this->data['cena']) ?>"></td></tr>
 
 
-			<tr><td><input type="submit" value="Upravit produkt" name="upravitProdukt"></td></tr>
-		  </table>
-</form>

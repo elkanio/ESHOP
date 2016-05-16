@@ -7,8 +7,11 @@ class Kosik{
 		{
 			if(isset($_SESSION["id"]["$id"]))
 				$_SESSION["id"]["$id"] = $_SESSION["id"]["$id"] +1;
-			else
+			else{
 				$_SESSION["id"]["$id"] = 1;
+			}
+
+
 		}
 
 	}

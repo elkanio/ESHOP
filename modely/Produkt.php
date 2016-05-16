@@ -4,7 +4,7 @@ class Produkt
 	#kontroluje jestli daný Produkt existuje
 	public static function Existuje($id)
 	{
-		if(db::VratRadek("SELECT * FROM produkty WHERE id = ? LIMIT 1", array($id)))
+		if(db::VratRadek("SELECT * FROM produkty WHERE id = ?", array($id)))
 			return true;
 		else
 			return false;
@@ -43,10 +43,10 @@ class Produkt
 			$pripojeni = mysqli_connect('localhost', 'root', '', 'eshop');
 
 				// zde nacist veci z formu
-				$nazev = $_POST['nazev'];
-				$popis = $_POST['popis'];
-				$kategorie = $_POST['kategorie'];
-				$cena = $_POST['cena'];
+				$nazev = htmlspecialchars(trim($_POST['nazev']));
+				$popis = htmlspecialchars(trim($_POST['popis']));
+				$kategorie = htmlspecialchars(trim($_POST['kategorie']));
+				$cena = htmlspecialchars(trim($_POST['cena']));
 
 				// aktualizovat hodnotu v databazi
 				$query = "UPDATE produkty SET nazev='$nazev', popis='$popis', kategorie='$kategorie',

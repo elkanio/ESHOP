@@ -14,12 +14,11 @@ class Prihlaseni{
 				if($uzivatel['hashHesla'] == sha1($heslo)) {
 					// prihlasit uzivatele -> vytvorit SESSION id podle ID v databazi
 					include_once 'uzivatel.php';
-					echo "neco";
-					$_SESSION['id'] = $uzivatel['id'];
+					$_SESSION['idUzivatel'] = $uzivatel['role'];
 					// ulozit udaje uzivatele do SESSION
 					$_SESSION['jm'] = $uzivatel['login'];
 
-		      header("location: /ES/index.php");
+		      header("location: index.php");
 				}
 
 				// jinak

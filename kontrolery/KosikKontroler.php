@@ -28,7 +28,7 @@ public function __construct()
 				{
 					#Zalozi a prida do objednavky
 					$obj = new Objednavka();
-					
+
 					if($baf=$obj->Objednej($this->jmeno,
 									$this->prijmeni,
 									$this->mesto,
@@ -44,10 +44,10 @@ public function __construct()
 					else
 					{
 						$this->error="Nepovedlo se připojit k databazi. Zkuste to za chvili.";
-					}				
+					}
 				}
 			else
-				$this->error = "Nemáte vyplněný formlulář";
+				$this->error = "Nemáte vyplněný formulář";
 
 		}
 	}
@@ -56,12 +56,12 @@ public function __construct()
 	{
 		$stringProdukty = "";
 		for($i = 0; $i<count($this->data['produkty']);$i++){
-			$stringProdukty .= $this->data['produkty'][$i]['pocet'].".".$this->data['produkty'][$i]['id'].";"; 
+			$stringProdukty .= $this->data['produkty'][$i]['pocet'].".".$this->data['produkty'][$i]['id'].";";
 
 		}
 		return $stringProdukty;
 	}
-	
+
 }
 #jen pro zjednoduseni nacteni z POST
 	function post($nazev)

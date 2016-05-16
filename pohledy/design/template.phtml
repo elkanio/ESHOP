@@ -20,11 +20,11 @@
   include "modely/uzivatel.php";
 
 // kdyz ma uzivatel ID 0 -> neregistrovany uzivatel
-if($_SESSION['id'] == 0) {
+if($_SESSION['idUzivatel'] == 0) {
   echo '<tr>'.
        '<td class="prihlasovani2">'.
-       '<a href="index.php?strana=Prihlaseni">|Přihlásit se|</a>'.
-       '<a href="index.php?strana=Registrace">|Zaregistrovat se|</a>'.
+       '<a style="color:white;" href="index.php?strana=Prihlaseni">|Přihlásit se </a>'.
+       '<a style="color:white;" href="index.php?strana=Registrace"> | Zaregistrovat se|</a>'.
        '</td>'.
   	   '</tr>';
 }
@@ -35,7 +35,6 @@ else {
 echo  '<form method="get">'.
       '<tr>'.
       '<td class="prihlasovani2">'.
-      '<a href="index.php?strana=Registrace">|Zaregistrovat se| </a>'.
       'Ahoj: '.$_SESSION['jm'].'<input value="odhlásit" type="submit" name="odhlasit">'.
       '</td>'.
       '</tr>'.
@@ -45,7 +44,7 @@ echo  '<form method="get">'.
 	if(isset($_GET['odhlasit']))
 	{
 		session_destroy();
-		header("location: ES/index.php");
+		header("location: index.php");
 		exit;
 	}
 
@@ -63,7 +62,6 @@ echo  '<form method="get">'.
 
   <div id="hlavni_stranka">
 
-
      <div id="cssmenu">
 		<ul>
 		   <li><a href='index.php'><span>Úvodní strana</span></a></li>
@@ -76,8 +74,19 @@ echo  '<form method="get">'.
 					</ul>
 		  </li>
 
-		     <li class='has-sub '><a href="index.php?strana=Kosik"><span>Nákupní košík (<?php if(isset($this->cena)) echo $this->cena; else echo "0"?>)</span></a></li>
-		     <li class='has-sub '><a href="index.php?strana=Objednavky"><span>Přehled objednávek</span></a></li>
+
+		    <li class='has-sub '><a href="index.php?strana=Kosik"><span>Nákupní košík (<?php if(isset($this->cena)) echo $this->cena; else echo "0"?> Kč)</span></a></li>
+
+		     <?php if($_SESSION['idUzivatel'] != 0) {
+
+		     	echo '<li class="has-sub">'.
+				    '<a href="index.php?strana=Objednavky">'.
+				    '<span>Přehled objednávek</span>'.
+				    '</a>'.
+				    '</li>';
+
+		     }?>
+
 
 		</ul>
 	</div>
