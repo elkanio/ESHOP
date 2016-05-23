@@ -77,7 +77,7 @@ echo  '<form method="get">'.
 
 		    <li class='has-sub '><a href="index.php?strana=Kosik"><span>Nákupní košík (<?php if(isset($this->cena)) echo $this->cena; else echo "0"?> Kč)</span></a></li>
 
-		     <?php if($_SESSION['idUzivatel'] != 0) {
+		     <?php if($_SESSION['idUzivatel'] != 1 && $_SESSION['idUzivatel'] != 0) {
 
 		     	echo '<li class="has-sub">'.
 				    '<a href="index.php?strana=Objednavky">'.

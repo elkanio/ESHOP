@@ -44,7 +44,7 @@ EOT;
 ?>
 </table>
 
-<?php if($_SESSION['idUzivatel'] != 0) {
+<?php if($_SESSION['idUzivatel'] != 1 && $_SESSION['idUzivatel'] != 0) {
 
 echo '<form method="post">'.
 	    '<table>'.

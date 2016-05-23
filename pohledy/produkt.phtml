@@ -20,7 +20,7 @@
 <a href="index.php">Zpět na nabídku</a>
 
 
-<?php if($_SESSION['idUzivatel'] != 0) {
+<?php if($_SESSION['idUzivatel'] != 1 && $_SESSION['idUzivatel'] != 0) {
 	$pom = $this->data['id'];
 
 	echo '<a href="index.php?strana=Produkt&id='.$pom.'&delete=true">Odstranit</a>';

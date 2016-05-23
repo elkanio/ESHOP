@@ -34,7 +34,7 @@ class Registrace{
 					$pripojeni = mysqli_connect('localhost', 'root', '', 'eshop');
 
 					// zjistit zda existuje uzivatel se zadanym loginem
-					$dotaz = "SELECT * FROM uzivateldb WHERE login='$login';";
+					$dotaz = "SELECT * FROM uzivateldb WHERE login=$login";
 
 					// promenna uzivatel uchovava vysledek dotazu, kdyz uzivatel neexistuje
 					// hodnota je FALSE, jinak objekt (TRUE)
